@@ -1,0 +1,10 @@
+<h1>Enter Your Location Details</h1>
+
+<div>
+  <%= simple_form_for @location do |f| %>
+    <%= f.input :latitude %>
+    <%= f.input :longitude %>
+    <br />
+    <%= f.submit 'Create', class: 'btn btn-primary' %>
+  <% end %>
+</div>
