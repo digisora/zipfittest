@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503214740) do
+ActiveRecord::Schema.define(version: 20170506015307) do
 
   create_table "locations", force: true do |t|
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "apiresponse"
   end
 
 end
