@@ -1,0 +1,24 @@
+<script>
+    var lat = <%= @location.latitude %>;
+    var lng = <%= @location.longitude %>;
+    var timeZoneAPI = "http://api.timezonedb.com/v2/get-time-zone?key=9V7A8K8QQ4IJ&format=json&by=position&lat="+lat+"&lng="+lng+"";
+   
+    $.getJSON( timeZoneAPI, function( json ) {
+      console.log(json);
+      var zoneName = json.zoneName;
+      var countryName = json.countryName;
+      var formatted = json.formatted;
+      $( ".zone" ).append(zoneName);
+      $( ".country" ).append(countryName);
+      $( ".time" ).append(formatted);
+    });
+
+</script>
+
+<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2" id="time">
+  <h2>Latitude: <%= @location.latitude %></h2>
+  <h2>Longitude: <%= @location.longitude %></h2>
+  <h3 class="zone"></h1>
+  <h3 class="country"></h2>
+  <h3 class="time"></h2>
+</div>
