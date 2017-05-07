@@ -5,20 +5,20 @@
    
     $.getJSON( timeZoneAPI, function( json ) {
       console.log(json);
-      var zoneName = json.zoneName;
+      var abbreviation = json.abbreviation;
       var countryName = json.countryName;
       var formatted = json.formatted;
-      $( ".zone" ).append(zoneName);
+      $( ".abrv" ).append(abbreviation);
       $( ".country" ).append(countryName);
       $( ".time" ).append(formatted);
     });
 
 </script>
 
-<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2" id="time">
-  <h2>Latitude: <%= @location.latitude %></h2>
-  <h2>Longitude: <%= @location.longitude %></h2>
-  <h3 class="zone"></h1>
+<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 custom-box">
+  <h3>Latitude: <%= @location.latitude %></h3>
+  <h3>Longitude: <%= @location.longitude %></h3>
+  <h3 class="abrv"></h1>
   <h3 class="country"></h2>
   <h3 class="time"></h2>
 </div>
